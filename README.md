@@ -56,3 +56,5 @@ wc -l #to count the number of lines
 root@ip-172-31-12-16:~/DevSecOps-Bash# curl -sL https://pokeapi.co/api/v2/pokemon?limit=1400 | jq ".results[].name" -r | wc -l
 1350
 root@ip-172-31-12-16:~/DevSecOps-Bash#
+
+![alt text](image.png)
