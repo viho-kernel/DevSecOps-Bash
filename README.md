@@ -92,3 +92,10 @@ direnv allow project1/.envrc
 
 for overall env variables set this at .bashrc
 for project level variables set this at .evnrc
+
+sh hello.sh vihari mumbai ganesh
+    $0        $1   $2       $3
+$0 == Will alway be script itself
+$1 == first argument
+$2 == second argument
+$3 == third argument
