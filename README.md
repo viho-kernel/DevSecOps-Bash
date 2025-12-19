@@ -67,7 +67,14 @@ export AWS_SECRET_KEY= "fdlajfdslfjldsfjlasd"
 
 env variables willbe store in ~/.bashrc file
 
+
+sudo apt-get install direnv
 #direnv
+
+nano .bashrc and the following line
+eval "$(direnv hook bash)"
+
+source ~/.bashrc
 
 you can define your env variables as required for your project
 1) create a project: mkdir project-1
@@ -82,3 +89,6 @@ by this way you can you the file as you want
 
 once after configuring it you have to allow them
 direnv allow project1/.envrc
+
+for overall env variables set this at .bashrc
+for project level variables set this at .evnrc
