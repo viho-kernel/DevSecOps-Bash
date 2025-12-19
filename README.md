@@ -100,3 +100,7 @@ $1 == first argument
 $2 == second argument
 $3 == third argument
 $@ == will print all arguments except the script file 
+$* == 
+
+yum update -y
+yum install cowsay -y
