@@ -3,7 +3,7 @@ jq is useful to filter out the json files
 
 jq ".results[].name" #this is how you use to filter the list results which containts object will have key's name 
 
-root@ip-172-31-12-16:~/DevSecOps-Bash# curl -sL https://pokeapi.co/api/v2/pokemon | jq ".results[].name"
+# curl -sL https://pokeapi.co/api/v2/pokemon | jq ".results[].name"
 "bulbasaur"
 "ivysaur"
 "venusaur"
@@ -29,7 +29,7 @@ root@ip-172-31-12-16:~/DevSecOps-Bash# curl -sL https://pokeapi.co/api/v2/pokemo
 
 use -r to remove double quotes
 
-root@ip-172-31-12-16:~/DevSecOps-Bash# curl -sL https://pokeapi.co/api/v2/pokemon | jq ".results[].name" -r
+curl -sL https://pokeapi.co/api/v2/pokemon | jq ".results[].name" -r
 bulbasaur
 ivysaur
 venusaur
@@ -53,7 +53,7 @@ raticate
 
 wc -l #to count the number of lines
 
-root@ip-172-31-12-16:~/DevSecOps-Bash# curl -sL https://pokeapi.co/api/v2/pokemon?limit=1400 | jq ".results[].name" -r | wc -l
+# curl -sL https://pokeapi.co/api/v2/pokemon?limit=1400 | jq ".results[].name" -r | wc -l
 1350
 root@ip-172-31-12-16:~/DevSecOps-Bash#
 
