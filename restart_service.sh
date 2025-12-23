@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $# -gt 0 ]; then
-    for REGION in $1; do
-        aws ec2 describe-vpcs --region $1 \
+    for REGION in $@; do
+        aws ec2 describe-vpcs --region $REGION \
         | jq -r '.Vpcs[].VpcId'
         echo "---------------------"        
     done
