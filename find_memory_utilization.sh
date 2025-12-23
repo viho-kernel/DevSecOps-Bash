@@ -12,7 +12,7 @@ AVAILABLE_PERCENTAGE=$(( $AVAILABLE_MEM * 100 / $TOTAL_MEM ))
 echo "Used Memory Utilization Percentage: $USED_PERCENTAGE%"
 echo "Available Memory Utilization Percentage: $AVAILABLE_PERCENTAGE%"
 
-if (($AVAILABLE_PERCENTAGE <= 10)); then   
+if (($AVAILABLE_PERCENTAGE <= 60)); then   
     echo "Memory is critically low. Sending Slack notification..."
     curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"Alert: Memory is critically low. Only $AVAILABLE_MEM MB available out of $TOTAL_MEM MB.\"}" $SLACK_WEB
 else
