@@ -104,3 +104,56 @@ $* ==
 
 yum update -y
 yum install cowsay -y
+
+
+==================================================================
+
+Day-2
+
+to see Disk Utiliation 'df -h'
+'|' (pipe = will run seperate two commands)
+grep == granular regular expression
+(grep will select a particularly select a thing from the output)
+df -h | grep -i '/dev/root'
+
+eg:
+#df -h
+root@ip-172-31-12-16:~/DevSecOps-Bash# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        14G  3.6G   10G  27% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  884K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M  155M  665M  19% /boot
+/dev/xvda15     105M  6.2M   99M   6% /boot/efi
+tmpfs            96M   12K   96M   1% /run/user/1000
+
+eg:
+
+
+root@ip-172-31-12-16:~/DevSecOps-Bash# df -h | grep /dev/root
+/dev/root        14G  3.6G   10G  27% /
+root@ip-172-31-12-16:~/DevSecOps-Bash#
+
+root@ip-172-31-12-16:~/DevSecOps-Bash# free -m | grep -i mem
+Mem:             957         378         274           0         488         579
+
+free -m: Executes the free command and uses the -m flag to display values in megabytes (MB).
+
+root@ip-172-31-12-16:~/DevSecOps-Bash# echo "Welcome-To-DevSecOps-Class" | cut -d "-" -f 1,2,3,4
+Welcome-To-DevSecOps-Class
+root@ip-172-31-12-16:~/DevSecOps-Bash#
+
+f= field
+
+# echo "Welcome,to,DevSecOps,Course" | cut -d "," -f 1,2,3
+Welcome,to,DevSecOps
+
+cut command will give the thing but -d will not work.
+
+# echo "Welcome,to,DevSecOps,Course" | awk -F "," '{print $1,$2,$3,$4}'
+Welcome to DevSecOps Course
+
+here awk command will give the required output by eliminating the ','
+
+awk is more effective than cut.
