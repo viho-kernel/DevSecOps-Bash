@@ -78,6 +78,14 @@ if $? == 0 then the previous command is right it executed
 anything other than 0 means the command failed.
 
 
+$# → “How many candies?” (count)
+
+$@ → “Give me each candy one by one” (loop)
+
+$* → “Give me all candies glued together” (string)
+
+$? → “Did my last candy game work?” (success check)
+
 --no-pager ==> to stop unnecessary logs 
 
 To export any path
