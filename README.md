@@ -157,3 +157,10 @@ Welcome to DevSecOps Course
 here awk command will give the required output by eliminating the ','
 
 awk is more effective than cut.
+
+Variable Pesedence
+10 - 5 * 4 + 7 / 2
+'-' = subtraction
+'*' = mulitiplication
+'+' = addition
+'/' = divide
