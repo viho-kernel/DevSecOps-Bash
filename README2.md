@@ -76,3 +76,6 @@ false false false
 $? == tell us whether the previously executed code is right or wrong
 if $? == 0 then the previous command is right it executed
 anything other than 0 means the command failed.
+
+
+--no-pager ==> to stop unnecessary logs 

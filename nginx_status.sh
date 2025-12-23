@@ -1,6 +1,6 @@
 #!/bin/bash
 
-systemctl status nginx >> /dev/null
+systemctl status nginx --no-pager
 
 if [ $? -eq 0 ]; then
     echo "The previous command executed successfully. Nginx is running."
