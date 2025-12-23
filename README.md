@@ -164,3 +164,6 @@ Variable Pesedence
 '*' = mulitiplication
 '+' = addition
 '/' = divide
+
+presedence value
+* >> 
