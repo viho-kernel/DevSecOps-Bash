@@ -93,3 +93,51 @@ echo 'export PATH=$PATH:/usr/games' >> ~/.bashrc
 source ~/.bashrc
 
 set -x #to debug in shell script
+
+
+========================================================================================================================
+
+Day - 6
+Output Redirection
+stdin
+eg:
+root@ip-172-31-12-16:~/DevSecOps-Bash# ls -la
+total 280
+drwxr-xr-x  3 root root   4096 Dec 23 15:54 .
+drwx------ 12 root root   4096 Dec 23 15:54 ..
+drwxr-xr-x  8 root root   4096 Dec 23 16:02 .git
+-rw-r--r--  1 root root   9074 Dec 19 11:18 3Tier.drawio
+-rw-r--r--  1 root root      0 Dec 23 07:30 80%
+-rw-r--r--  1 root root   4614 Dec 23 07:05 README.md
+-rw-r--r--  1 root root   2112 Dec 23 15:27 README2.md
+-rw-r--r--  1 root root    707 Dec 23 06:06 TOPICS_Covered
+-rw-r--r--  1 root root      0 Dec 23 11:04 find
+-rw-r--r--  1 root root   1299 Dec 23 11:11 find_memory_utilization.sh
+-rw-r--r--  1 root root     68 Dec 19 11:17 hello.sh
+-rw-r--r--  1 root root     13 Dec 23 11:04 if_condition.sh
+-rw-r--r--  1 root root 196766 Dec 19 11:18 image.png
+-rw-r--r--  1 root root    620 Dec 23 07:32 new_utilization.sh
+-rw-r--r--  1 root root    214 Dec 23 11:57 nginx_status.sh
+-rw-r--r--  1 root root    193 Dec 19 09:55 pokemon.sh
+-rw-r--r--  1 root root    198 Dec 19 12:02 prove.sh
+-rw-r--r--  1 root root    269 Dec 23 15:54 restart_service.sh
+-rwxrwxrwx  1 root root    127 Dec 19 09:27 scripsh.sh
+-rw-r--r--  1 root root     42 Dec 19 09:32 secondscript.sh
+-rw-r--r--  1 root root     91 Dec 23 15:27 vpc.sh
+root@ip-172-31-12-16:~/DevSecOps-Bash#
+
+
+stdout
+eg:
+root@ip-172-31-12-16:~/DevSecOps-Bash# echo "Vihari"
+Vihari
+
+stderr
+Eg:
+root@ip-172-31-12-16:~/DevSecOps-Bash# megastarr
+megastarr: command not found
+root@ip-172-31-12-16:~/DevSecOps-Bash#
+
+>, >>, tee, /dev/null
+> == data will be overriden
+>> == data will be appended
