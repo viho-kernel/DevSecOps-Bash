@@ -1,0 +1,19 @@
+Day-1, Day-2, Day-3
+1. Baselab creation in AWS.
+2. Install packages needed for the course
+  -- unzip, jq, direnv, awscli, azcli, net-tools
+3. Declaring variables & accessing them.
+4. Declaring environmental variables & updating in .bashrc.
+5. Resolving .bashrc issues by using folder level env variables using direnv.
+6. Accessing pokemon API and parsing JSON Ouput using jq.
+7. Passing positional arguments to shell script. Eg: hello.sh $1 $2
+
+Day-4:
+Shell Data Operators [
+    -Arithematic Operators(+, - , *, %)
+    -Relational Operators(==,!=, <=, >=, < , >)
+    -Logical Operators (&&, -a, -o)
+    - File Test Operators(-b, -x, -c, ...)
+]
+Understanding $?, $@, $*, $#
+Using if conditional statements. 
