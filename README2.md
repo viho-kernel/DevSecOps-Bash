@@ -80,3 +80,8 @@ anything other than 0 means the command failed.
 
 --no-pager ==> to stop unnecessary logs 
 
+To export any path
+echo 'export PATH=$PATH:/usr/games' >> ~/.bashrc
+source ~/.bashrc
+
+set -x #to debug in shell script
