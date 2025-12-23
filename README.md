@@ -168,3 +168,20 @@ Variable Pesedence
 presedence value
 () >> * >> / >> % >> + >> - >> << >> >> >> < >> <= >> > >> >= >> == >> != >> & >> ^ >> | >> && >> || >> ?: >> = >> , 
 
+Direct usage script
+root@ip-172-31-12-16:~/DevSecOps-Bash# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        14G  3.6G   10G  27% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  884K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M  155M  665M  19% /boot
+/dev/xvda15     105M  6.2M   99M   6% /boot/efi
+tmpfs            96M   12K   96M   1% /run/user/1000
+
+To get the used percentage.
+# df -h | grep -i '/dev/root' | awk -F " " '{print $5}'
+root@ip-172-31-12-16:~/DevSecOps-Bash# df -h | grep -i '/dev/root' | awk -F " " '{print $5}'
+27%
+root@ip-172-31-12-16:~/DevSecOps-Bash#
+
