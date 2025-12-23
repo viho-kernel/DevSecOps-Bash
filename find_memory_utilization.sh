@@ -15,7 +15,7 @@ echo "Available Memory Utilization Percentage: $AVAILABLE_PERCENTAGE%"
 
 if (($AVAILABLE_PERCENTAGE <= 60)); then   
     echo "Memory utilization of $ipofme is critically low. Sending Slack notification..."
-    curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"Alert: Memory is critically low. Only $AVAILABLE_MEM MB available out of $TOTAL_MEM MB.\"}" $SLACK_WEB
+    curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"Alert: Memory is critically low for $ipofme. Only $AVAILABLE_MEM MB available out of $TOTAL_MEM MB on $ipofme.\"}" $SLACK_WEB
     curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"Alert: Memory Utilization is at $USED_PERCENTAGE%. Please take necessary actions.\"}" $SLACK_WEB
     echo "Slack notification sent."
 else
