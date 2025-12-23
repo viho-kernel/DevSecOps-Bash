@@ -181,6 +181,7 @@ tmpfs            96M   12K   96M   1% /run/user/1000
 
 To get the used percentage.
 # df -h | grep -i '/dev/root' | awk -F " " '{print $5}'
+
 root@ip-172-31-12-16:~/DevSecOps-Bash# df -h | grep -i '/dev/root' | awk -F " " '{print $5}'
 27%
 root@ip-172-31-12-16:~/DevSecOps-Bash#
