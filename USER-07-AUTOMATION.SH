@@ -7,6 +7,7 @@ if ["${USERNAME}" = "${EXISTING_USER}"]; then
 echo "The user $USERNAME is Already Exists. Try A Different Username."
 else
 echo "Lets Create User ${USERNAME}."
+fi
 done
 else
 echo "You have given $# Arguments. Please provider Atleast one Arg."
