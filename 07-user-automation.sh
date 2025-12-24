@@ -1,17 +1,18 @@
-#!/bin/bash
 #check how many parameters are passed if no parameters exit the script
 #check if user is already existed and create if not exists.
 #make sure user has sudo permissions.
 #Expire the password forcing to reset it.
 
+#!/bin/bash
 SLACK_WEB='https://hooks.slack.com/services/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'
+#USERNAME=$1
 if [$# -gt 0]; then
 for USERNAME in $@; do
 #CHECK EXISTING USER
 EXISTING_USER=$(cat /etc/passwd | grep -i -w ${USERNAME} | cut -d ':' -f 1)
 if [ "${USERNAME}" = "${EXISTING_USER}" ]; then
 echo "The User ${USERNAME} Already Exists. Try a difference Username."
-else
+else 
 echo "Lets Create user ${USERNAME}."
 sudo useradd -m $USERNAME --shell /bin/bash -d /home/${USERNAME}
 sudo usermod -aG sudo ${USERNAME}
