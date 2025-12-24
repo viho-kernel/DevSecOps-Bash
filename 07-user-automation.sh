@@ -26,5 +26,5 @@ curl -X POST ${SLACK_WEB} -sL -H 'Content-type: application/json' --data "{"text
 fi
 done
 else
-echo "You have given $# Arguments. Please provide atleast one Arg.'
+echo "You have given $# Arguments. Please provide atleast one Arg."
 fi
