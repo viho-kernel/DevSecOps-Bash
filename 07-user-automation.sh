@@ -9,7 +9,7 @@ if [$# -gt 0]; then
 for USERNAME in $@; do
 #CHECK EXISTING USER
 EXISTING_USER=$(cat /etc/passwd | grep -i -w ${USERNAME} | cut -d ':' -f 1)
-if ["${USERNAME}" = "${EXISTING_USER}"]; then
+if [ "${USERNAME}" = "${EXISTING_USER}" ]; then
 echo "The User ${USERNAME} Already Exists. Try a difference Username."
 else
 echo "Lets Create user ${USERNAME}."
@@ -22,7 +22,7 @@ echo "${USERNAME}:${PASSWORD}" | sudo chpasswd
 passwd -e ${USERNAME}
 echo "The Temporary Credentails are ${USERNAME} and ${PASSWORD}"
 curl -X POST ${SLACK_WEB} -sL -H 'Content-type: application/json' --data "{"text": \"Username is: ${USERNAME}\"}" >>/dev/null
-            curl -X POST ${SLACK_WEB} -sL -H 'Content-type: application/json' --data "{"text": \"Temporary Password Is: ${PASSWORD}  Reset This Password Immediatly.\"}" >>/dev/null
+    curl -X POST ${SLACK_WEB} -sL -H 'Content-type: application/json' --data "{"text": \"Temporary Password Is: ${PASSWORD}  Reset This Password Immediatly.\"}" >>/dev/null
 fi
 done
 else
