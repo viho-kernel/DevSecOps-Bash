@@ -141,3 +141,22 @@ root@ip-172-31-12-16:~/DevSecOps-Bash#
 >, >>, tee, /dev/null
 > == data will be overriden
 >> == data will be appended
+
+2>&1
+1> == redirecting standard ouput
+2> == standard error
+
+if we don't give & the standard error will not be redirectede to standard 1.
+
+bash standard-stderr.sh > /tmp/hello 2>&1
+we bill sending all standard error output to /tmp/hello and will be writing error to 1.
+
+tee
+/dev/null
+tee is also similar to > the output will be overriden.
+# echo $(date) | tee /tmp/tee --> Ouput will be overriden.
+# echo $(date) | tee -a /tmp/tee --> ouput will be appended.
+
+# netcat -z -n -v 172.31.12.16 20-30 ==> netcat is a tool used to test the open ports for an IP between 20 to 30.
+
+# netcat -z -n -v 172.31.12.16 20-30 2>&1 | grep succeeded
