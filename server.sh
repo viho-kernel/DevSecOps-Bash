@@ -5,5 +5,5 @@ echo ${SERVERS[@]}
 for SERVER in ${SERVERS[@]};
 do
   echo "Testing connectivity to: $SERVER"
-  netcat -z -v -n $SERVER 20-30 2>&1 | grep succeeded
+  netcat -z -v -n $SERVER 21-23 2>&1 | grep succeeded
 done
