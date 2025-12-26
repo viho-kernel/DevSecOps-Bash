@@ -11,7 +11,7 @@ sudo useradd -m $USERNAME --shell /bin/bash -d "/home/${USERNAME}"
 SPEC=$(echo '!@#$%^&*()_' | fold -w1 | shuf | head -1)
 PASSWORD="India@${RANDOM}${SPEC}"
 echo "${USERNAME}:${PASSWORD}" | sudo chpasswd
-suo passwd -e ${USERNAME}
+sudo passwd -e ${USERNAME}
 echo "The Temporary credentials are ${USERNAME} and ${PASSWORD}"
 curl -X POST $SLACK_WEB -sL -H 'Content-type: application/json' --data "{\"text\":\"Username is: ${USERNAME}.\"}" >> /dev/null
 curl -X POST $SLACK_WEB -sL -H 'Content-type: application/json' --data "{\"text\":\"Temporary password is ${PASSWORD}. Please change you're Temporary passwod immediately.\"}" 
