@@ -25,6 +25,7 @@ this will set the user default login shell to bash
 -d "/home/${USERNAME}"
 Explicitly sets the home directory path for the user.
 By default, useradd would also create /home/username, but here it’s specified to be sure.
+11) Adding user to sudo group.
 11) Creating a random password for that user using a building function called $RANDOM
 12) Use functions like fold -w1 to make a horizontal line to veritcal also shuf to shuffle them and take the first variable head
 eg: echo '!@#$%^&*()_' | fold -w1
@@ -66,3 +67,13 @@ echo "${USERNAME}:${PASSWORD}" | sudo chpasswd
 14) now expire password for that specific user
 passwd -e ${USERNAME}
 15) send this notifications to your slack channel
+16) now enabled password Authentication inside ssh_sshd automatically using tools like -tr and -sed
+Translate -tr == to change a spectific character
+Stream Editor -sed == to change whole sequence in a line. 
+
+*translate is moostly used to change a character from lower to upper
+*stream editor is used for bigger changes
+sed -i "66 s/.*PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config | grep -i passwordauthen -n
+line number: 66
+substitue: s/.
+
