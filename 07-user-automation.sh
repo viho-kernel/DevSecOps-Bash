@@ -21,5 +21,5 @@ sed "66 s/.*PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd
 fi
 
 else
-echo "You've given $@ arguments. Please provide atleast one Arg."
+echo "You've given $# arguments. Please provide atleast one Arg."
 fi
