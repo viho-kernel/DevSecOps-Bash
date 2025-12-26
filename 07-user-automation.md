@@ -19,6 +19,12 @@ commands to use
 10) adding user (useradd -m $USERNAME) add this user to /bin/bash path.
 eg: sudo useradd -m $USERNAME --shell /bin/bash -d /home/$USERNAME
 WITH This we are adding a user to the path /bin/bash and creating a path for that user
+-m tell useradd to create a home directory for the new user.
+--shell /bin/bash
+this will set the user default login shell to bash
+-d "/home/${USERNAME}"
+Explicitly sets the home directory path for the user.
+By default, useradd would also create /home/username, but here it’s specified to be sure.
 11) Creating a random password for that user using a building function called $RANDOM
 12) Use functions like fold -w1 to make a horizontal line to veritcal also shuf to shuffle them and take the first variable head
 eg: echo '!@#$%^&*()_' | fold -w1
