@@ -186,3 +186,4 @@ root@ip-172-31-12-16:~/DevSecOps-Bash# df -h | grep -i '/dev/root' | awk -F " " 
 27%
 root@ip-172-31-12-16:~/DevSecOps-Bash#
 
+Hello one line Jan1st commit
