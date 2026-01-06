@@ -4,7 +4,7 @@ SLACK_WEB='https://hooks.slack.com/services/T0A6205T7UY/B0A55NC2RL6/SYoHAe0QKw8E
 if [ $# -gt 0 ]; then
 for USERNAME in $@
 do
-if [ '${USERNAME}' =~ '$[a-z][a-z][a-z][0-9][0-9][0-9]' ]; then
+if [[ '${USERNAME}' =~ ^$[a-z][a-z][a-z][0-9][0-9][0-9]$ ]]; then
 EXISTING_USER=$(cat /etc/passwd | grep -i -w '$USERNAME' | cut -d ':' -f1) 
 
 if [ '$USERNAME' = '$EXISTING_USER' ]; then
