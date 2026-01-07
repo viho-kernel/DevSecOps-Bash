@@ -7,7 +7,7 @@ for vol in $vols
 do
 size=$(aws ec2 describe-volumes --volume-ids $vol | jq ".Volumes[].Size")
 
-if [ "$size" -gt 20 ]; 
+if [ "$size" -gt 5 ]; 
 then
     
     echo " $vol is a production volume. Please don't delete it. "
