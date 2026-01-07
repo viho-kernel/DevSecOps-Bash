@@ -23,3 +23,7 @@ done
 
 
 }
+
+#call function here
+
+delete_vols
