@@ -6,13 +6,14 @@ vols=$(aws ec2 describe-volumes --region us-east-1 | jq ".Volumes[].VolumeId" | 
 for vol in $vols
 do
 status=$(aws ec2 describe-volumes --volume-ids $vol | jq ".Volumes[].Attachments[].State" -r)
+instance=$(aws ec2 describe-volumes --volume-ids vol-072bb485c0d4990dc | jq ".Volumes[].Attachments[].InstanceId")
 
 if [ "$status" = 'attached' ]; 
 then
     
-    echo " $vol is in use by the EC2. "
+    echo " $vol is in use by the EC2 {$instance}. Don't delete it"
     curl -s -X POST -H 'Content-type: application/json' \
-    --data "{\"text\":\" $vol is in use by the EC2 Don't delete it.\"}" $WEB_URL
+    --data "{\"text\":\" $vol is in use by the EC2 {$instance}. Don't delete it.\"}" $WEB_URL
 else
     echo " $vol is not in use. Hence, proceeding with deleting it. "
     curl -s -X POST -H 'Content-type: application/json' \
