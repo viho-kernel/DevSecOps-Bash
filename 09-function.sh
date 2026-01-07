@@ -9,14 +9,14 @@ do
    if [ $size -gt 5 ]
    then
       echo "The $vol volume is a production volume don't delete it."
-      curl -s -X POST -H 'Content-type: application/json' \
+      curl -X POST -sL -H 'Content-type: application/json' \
     --data "{\"text\":\"${vol} is a proudction environment will not delete it.\"}" $WEB_URL
 
    else
 
       echo "The $vol volume is not a production volume. Proceeding with termination."
       aws ec2 delete-volume --volume-id $vol
-      curl -s -X POST -H 'Content-type: application/json' \
+      curl -X POST -sL -H 'Content-type: application/json' \
     --data "{\"text\":\"${vol} has been terminated\"}" $WEB_URL
    fi 
 done
