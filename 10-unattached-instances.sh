@@ -5,7 +5,7 @@ delete_unattached_vols(){
   vols=$(aws ec2 describe-volumes --region us-east-1 | jq -r ".Volumes[].VolumeId")
   for vol in $vols; do
     status=$(aws ec2 describe-volumes --volume-ids "$vol" | jq -r ".Volumes[].Attachments[].State")
-    instance=$(aws ec2 describe-volumes --volume-ids "$vol" | jq -r ".Volumes[].Attachments[].InstanceId")
+    instance=$(aws ec2 describe-volumes --volume-ids "$vol" | jq  ".Volumes[].Attachments[].InstanceId")
 
     if [ "$status" = "attached" ]; then
       echo "$vol is in use by EC2 $instance. Don't delete it."
