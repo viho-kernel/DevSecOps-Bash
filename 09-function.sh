@@ -6,15 +6,15 @@ vols=$(aws ec2 describe-volumes --region us-east-1 | jq ".Volumes[].VolumeId" | 
 for vol in $vols
 do 
    size=$(aws ec2 describe-volumes --volume-ids $vol | jq ".Volumes[].Size")
-   if [ $size -gt 5 ]
+   if [[ "$size" -gt 5 ]] ;
    then
-      echo "The $vol volume is a production volume don't delete it."
+      echo "The ${vol} volume is a production volume don't delete it."
       curl -X POST -sL -H 'Content-type: application/json' \
-    --data "{\"text\":\"${vol} is a proudction environment will not delete it.\"}" $WEB_URL
+    --data "{\"text\":\"${vol} is a proudction volume will not delete it.\"}" $WEB_URL
 
    else
 
-      echo "The $vol volume is not a production volume. Proceeding with termination."
+      echo "The ${vol} volume is not a production volume. Proceeding with termination."
       aws ec2 delete-volume --volume-id $vol
       curl -X POST -sL -H 'Content-type: application/json' \
     --data "{\"text\":\"${vol} has been terminated\"}" $WEB_URL
