@@ -13,7 +13,7 @@ then
     
     echo " $vol is in use by the EC2 {$instance}. Don't delete it"
     curl -s -X POST -H 'Content-type: application/json' \
-    --data "{\"text\":\" $vol is in use by the EC2 {$instance}. Don't delete it.\"}" $WEB_URL
+    --data "{\"text\":\" $vol is in use by the EC2 $instance . Don't delete it.\"}" $WEB_URL
 else
     echo " $vol is not in use. Hence, proceeding with deleting it. "
     curl -s -X POST -H 'Content-type: application/json' \
