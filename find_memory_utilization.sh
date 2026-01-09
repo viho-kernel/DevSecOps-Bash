@@ -1,6 +1,6 @@
 #!/bin/bash
 ipofme=$(hostname -I | awk '{print $1}')
-#SLACK_WEB='https://hooks.slack.com/services/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'https://hooks.slack.com/services/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'
+SLACK_WEB='https://hooks.slack.com/services/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'https://hooks.slack.com/services/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'
 
 TOTAL_MEM=$(free -m | grep -i mem | awk -F " " ' {print $2}')
 AVAILABLE_MEM=$(free -m | grep -i mem | awk -F " " ' {print $7}')
