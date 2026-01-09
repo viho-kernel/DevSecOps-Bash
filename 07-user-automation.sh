@@ -1,5 +1,5 @@
 #!/bin/bash
-SLACK_WEB='https://hooks.slack.com/services/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'
+#SLACK_WEB='https://hooks.slack.com/services/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'
 #USERNAME=$1
 if [ $# -gt 0 ]; then
 for USERNAME in $@

@@ -1,5 +1,5 @@
 #!/bin/bash
-WEB_URL="https://hooks.slack.com/services/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"
+#WEB_URL="https://hooks.slack.com/services/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"
 
 delete_unattached_vols(){
   vols=$(aws ec2 describe-volumes --region us-east-1 | jq -r ".Volumes[].VolumeId")
