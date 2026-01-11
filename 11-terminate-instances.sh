@@ -1,10 +1,7 @@
 #!/bin/bash
 
 terminate_instances() {
-  ids=$(aws ec2 describe-instances \
-    --region us-east-1 \
-    --query "Reservations[].Instances[?InstanceType=='t3.micro'].InstanceId" \
-    --output text)
+  ids=$(aws ec2 describe-instances --region us-east-1 | jq -r '.Reservations[].Instances[] | select(.InstanceType=="t3.micro") | .InstanceId')
 
   if [ -n "$ids" ]; then
     echo "Terminating instances: $ids"
@@ -13,3 +10,5 @@ terminate_instances() {
     echo "No t3.micro instances found."
   fi
 }
+
+terminate_instances
